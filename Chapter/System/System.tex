@@ -1,49 +1,49 @@
 \section{System}\label{sec:System}
-\todo[inline, color=red]{???}
+\todo[inline, color=red]{Laura}
 
 \subsection{VR Labor}\label{sec:VRLabor}
 \todo[inline, color=red]{Anna}
 
 \subsection{Controller Menu} \label{sec:Menu}
-\todo[inline, color=red]{??}
+\todo[inline, color=red]{Anna}
 
 \subsection{Interaction Methods}\label{sec:Interactions}
 \todo[inline, color=yellow]{Laura}
-Of course there were various different interaction methods required to make the \textit{Interaction Lab} suitable for the testing described and evaluated in section~\ref{sec:evaluation}. Also all interaction methods are implemented to realise the grabbing of virtual objects, there can be spereated in two categoeris: close- and far range interactions (compare section~\ref{sec:CloseRange} and~\ref{sec:FarRange}). The so called close range combines all interactions which can be used to pick up objects in the direct reach of the user. As it is not quit easy and natural to walk through a huge area in VR, it is common to have grabbing interactions, which allow the user to grab objects which are normally seen as out of his reach~\cite{VRBook}. Interaction methods allowing such an acting are called far range interactions. \\
-In the following sections all available interaction methods of the \textit{Interaction Lab} are presented. To guarantee a better overview the are sorted into the two categories close range (compare section~\ref{sec:CloseRange}) and far range (compare section~\ref{sec:FarRange}). The interaction methods described in sections~\ref{sec:ControllerGrab} and~\ref{sec:DistantControllerGrab} use snapping. This technique is described in section~\ref{sec:snapping}. In addition to that the integration of the various interaction methods into the testing scene, as well as the actual supermarket scenes (compare section~\ref{sec:VRLabor}) are depicted in section~\ref{sec:integration}. \\
-For a better understanding it should be mentioned, that all interaction methods can be controlled with the \textit{HTC Vive}-controller. The technique is rather the same for every grabbing interaction: it is started by pulling the trigger and ended by releasing it.
+Of course there were various different interaction methods required to make the \textit{Interaction Lab} suitable for the testing described and evaluated in section~\ref{sec:evaluation}. Also all interaction methods are implemented to realise the grabbing of virtual objects, there can be separated in the two categories, described in the next two paragraphs:
 
-\subsubsection{Close Range Interactions}\label{sec:CloseRange}
-\todo[inline, color=red]{Laura}
-As indicated above the close range can be interpreted as a synonym for the natural interaction radius of the person. Due to this definition it is excluded that those interactions can be used outside an area, which the person can reach with his arm, or to be more precise: with the controller in his hand. 
+\paragraph{Close Range (CR) Interactions:} The CR can be interpreted as a synonym for the natural interaction radius of the person. Due to this definition it is excluded that those interactions can be used outside an area, which the person can not reach with his arm, or to be more precise: with the controller in his hand. In other words: the CR combines all interactions which can be used to pick up objects in the direct reach of the user.
 
-%They differ mainly in the accuracy 
-%wie eingangs kurz erwähnt--> erklren was close range; natürliche Schranke die reale Raum
-%geplante und umgesetzte
-\paragraph{Grab via Controller} \label{sec:ControllerGrab}
+\paragraph{Far Range (FR) Interactions:} Due to a limitation of the range of motion in VR applications, it is common to have grabbing interactions, which allow the users to grab objects which are normally seen as out of their reach~\cite{VRBook}. Interaction methods allowing such an acting are called FR interactions. \\
+
+Whereas the CR interactions differ mainly in the accuracy of the selection of an object while grabbing it, the FR methods differ in their usability. All characteristics of the various interaction methods can be traced in their descriptions (compare sections~\ref{sec:TouchGrab} -~\ref{sec:RaycastHMD}).
+
+For a better understanding it should be mentioned, that all interaction methods can be controlled with the \textit{HTC Vive}-controller. Even there are plenty of different possibilities to grab an object, all methods have in common, that the grabbing is caused by pressing the trigger on the \textit{HTC Vive}-controller. The releasing of the object is than triggered by letting it go. Whenever there is a divergent Usability necessary, it is described in the respective section (compare~\ref{sec:ExtendableRay}).
+
+Due to an easier integration into the learning room, as well as the actual supermarker scenes (compare section~\ref{sec:VRLabor}), all methods using a ray (compare sections~\ref{sec:ExtendableRay},~\ref{sec:Raycast} and ~\ref{sec:WandGrab}) are summed up in one script called \textit{AllRaycastMethods.cs}. All other methods have their on script, where the grabbing and releasing is implemented. Also the \textit{Raycast Head Mounted Display}-method, described in section~\ref{sec:RaycastHMD}, is using a ray, it is not included into the script mentioned above. This is caused by remaining problems during the implementation of this method, which lead to an unfinished work. Further explanations on why this method is not available in the \textit{Interaction Lab} can be found in the according section.
+
+The two interaction methods, described in sections~\ref{sec:TouchGrab} or rather~\ref{sec:ProximityGrab}, can be used with snapping or without it. This technique is used to reassign the position and orientation of a grabbed object in hand. By assuming that the middle of the ring of the \textit{HTC Vive}-controller is the new center of the grabbed object, the actual grab could appear more realistic to the user. 
+
+In the following sections all available interaction methods of the \textit{Interaction Lab} are presented. To guarantee a better overview they are sorted by their interaction range. 
+
+\subsubsection{Close Range: Touch Grab} \label{sec:TouchGrab}
 %Umgsetzt in script bla.
 
-\paragraph{Grab via Controller with slitghly Distance} \label{sec:DistantControllerGrab}
-\paragraph{Grab via Stick} \label{sec:StickGrab}
+\subsubsection{Close Range: Proximity Grab} \label{sec:ProximityGrab}
+\subsubsection{Close Range: Wand Grab} \label{sec:WandGrab}
 %In conrtrast do the Interaction method described in \ref{sec:DistantControllerGrab} this method can be used to grab very tiny objects. Thereby it is not needed that the target object is very isolated. To give the user such an high grade of accuracy a stick is added to the controller like shown on picture BLA.
 
-\subsubsection{Far Range Interactions}\label{sec:FarRange}
-\todo[inline, color=red]{Laura}
-%geplante, umgesetzte und fehlerhafte Interaktionen
 
-\paragraph{Raycast} \label{sec:Raycast}
-\paragraph{Indirect Raycast} \label{sec:IndirectRaycast}
-\paragraph{Raycast Head Mounted Display} \label{sec:RaycastHMD}
+\subsubsection{Far Range: Raycast} \label{sec:Raycast}
+\subsubsection{Far Range: Extendable Ray} \label{sec:ExtendableRay}
+\subsubsection{Far Range: Raycast Head Mounted Display} \label{sec:RaycastHMD}
 %Der vollständigkeithalber..
 %konnte nicht integirert werden weil...
 
-\subsubsection{Snapping} \label{sec:snapping}
-\subsubsection{Integration to the system} \label{sec:integration}
-%was bisher eher unterschwellig behandelt wurde ist, dass  the dfferent interaction methods are imple,emted in various scripts.der einfachheithalber und weil es sch heerausgestellt hat DAS SICH DIE rays ansonsten ausschließen sind rays zusammen.
+
 
 
 
 \subsection{Self-Teaching} \label{sec:selfteaching}
-\todo[inline, color=red]{??}
+\todo[inline, color=red]{Anna}
 
 \newpage
