@@ -1,5 +1,6 @@
 \section{System}\label{sec:System}
-\todo[inline, color=red]{Laura}
+\todo[inline, color=yellow]{Laura}
+The actual application can be divided into to type of VR rooms. First of all there is a learning room, where the user can get in touch with the different interaction methods and afterwards different tasks will be presented to him in a VR supermarket scenario (compare section~\ref{sec:VRLabor}). In the learning room the user will be supported in his learning process by a selfteaching system (compare section~\ref{sec:selfteaching}), which can get switched on and off, when he is in the supermarket. The user can make this setting among all other settings in a Menu  (compare section~\ref{sec:Menu}), which is controllable with the \textit{HTC Vive}-controller. 
 
 \subsection{VR Labor}\label{sec:VRLabor}
 \todo[inline, color=red]{Anna}
@@ -26,15 +27,22 @@ The two interaction methods, described in sections~\ref{sec:TouchGrab} or rather
 In the following sections all available interaction methods of the \textit{Interaction Lab} are presented. To guarantee a better overview they are sorted by their interaction range. 
 
 \subsubsection{Close Range: Touch Grab} \label{sec:TouchGrab}
-%Umgsetzt in script bla.
 
 \subsubsection{Close Range: Proximity Grab} \label{sec:ProximityGrab}
+%ungenaueste Methode
+
+The functionality is provided by the script \textit{\textcolor{red}{ProximityGrab.cs}}. The basic idea is that the object can be grabbed, whenever the object triggers the \textit{BoxCollider} \cite{website:BoxCollider} placed at the end of the \textit{HTC Vive}-controller. In contrast to the \textit{Touch Grab} described in section~\ref{sec:TouchGrab} this collider is bigger than the actual size of the controller. 
+
+
 \subsubsection{Close Range: Wand Grab} \label{sec:WandGrab}
-%In conrtrast do the Interaction method described in \ref{sec:DistantControllerGrab} this method can be used to grab very tiny objects. Thereby it is not needed that the target object is very isolated. To give the user such an high grade of accuracy a stick is added to the controller like shown on picture BLA.
+In contrast to the interaction method described in \ref{sec:ProximityGrab} this method can be used to grab very tiny objects. Thereby it is not needed that the target object is very isolated from other objects. To give the user such an high grade of accuracy a stick is added to the controller like shown on figure \textcolor{red}{PICTURE}. The user can grab an virtual object he touches with the \textit{HTC Vive}-controller by pulling the trigger. To place the object on the target area he simply release the trigger after he moved the object to its destination. \\
+%Umsetzung in AllRaycastMethods.cs
 
 
 \subsubsection{Far Range: Raycast} \label{sec:Raycast}
+%Umsetzung in AllRaycastMethods.cs
 \subsubsection{Far Range: Extendable Ray} \label{sec:ExtendableRay}
+%Umsetzung in AllRaycastMethods.cs
 \subsubsection{Far Range: Raycast Head Mounted Display} \label{sec:RaycastHMD}
 %Der vollständigkeithalber..
 %konnte nicht integirert werden weil...
