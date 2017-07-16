@@ -1,3 +1,4 @@
+
 \section{System}\label{sec:System}
 \todo[inline, color=yellow]{Laura}
 The actual application can be divided into to type of VR rooms. First of all there is a learning room, where the user can get in touch with the different interaction methods and afterwards different tasks will be presented to him in a VR supermarket scenario (compare section~\ref{sec:VRLabor}). In the learning room the user will be supported in his learning process by a selfteaching system (compare section~\ref{sec:selfteaching}), which can get switched on and off, when he is in the supermarket. The user can make this setting among all other settings in a Menu  (compare section~\ref{sec:Menu}), which is controllable with the \textit{HTC Vive}-controller. 
@@ -20,35 +21,47 @@ Whereas the CR interactions differ mainly in the accuracy of the selection of an
 
 For a better understanding it should be mentioned, that all interaction methods can be controlled with the \textit{HTC Vive}-controller. Even there are plenty of different possibilities to grab an object, all methods have in common, that the grabbing is caused by pressing the trigger on the \textit{HTC Vive}-controller. The releasing of the object is than triggered by letting it go. Whenever there is a divergent Usability necessary, it is described in the respective section (compare~\ref{sec:ExtendableRay}).
 
-Due to an easier integration into the learning room, as well as the actual supermarker scenes (compare section~\ref{sec:VRLabor}), all methods using a ray (compare sections~\ref{sec:ExtendableRay},~\ref{sec:Raycast} and ~\ref{sec:WandGrab}) are summed up in one script called \textit{AllRaycastMethods.cs}. All other methods have their on script, where the grabbing and releasing is implemented. Also the \textit{Raycast Head Mounted Display}-method, described in section~\ref{sec:RaycastHMD}, is using a ray, it is not included into the script mentioned above. This is caused by remaining problems during the implementation of this method, which lead to an unfinished work. Further explanations on why this method is not available in the \textit{Interaction Lab} can be found in the according section.
+Due to an easier integration into the learning room, as well as the actual supermarket scenes (compare section~\ref{sec:VRLabor}), all methods using a ray (compare sections~\ref{sec:ExtendableRay},~\ref{sec:Raycast} and ~\ref{sec:WandGrab}) are summed up in one script called \textit{AllRaycastMethods.cs}. All other methods have their on script, where the grabbing and releasing is implemented. Also the \textit{Raycast Head Mounted Display}-method, described in section~\ref{sec:RaycastHMD}, is using a ray, it is not included into the script mentioned above. This is caused by remaining problems during the implementation of this method, which lead to an unfinished work. Further explanations on why this method is not available in the \textit{Interaction Lab} can be found in the according section.
 
 The two interaction methods, described in sections~\ref{sec:TouchGrab} or rather~\ref{sec:ProximityGrab}, can be used with snapping or without it. This technique is used to reassign the position and orientation of a grabbed object in hand. By assuming that the middle of the ring of the \textit{HTC Vive}-controller is the new center of the grabbed object, the actual grab could appear more realistic to the user. 
+
+In the application all objects, which can be grabbed are tagged as moveable.\\
 
 In the following sections all available interaction methods of the \textit{Interaction Lab} are presented. To guarantee a better overview they are sorted by their interaction range. 
 
 \subsubsection{Close Range: Touch Grab} \label{sec:TouchGrab}
+\todo[inline, color=yellow]{Laura}
+When this interaction method is selected, the user can make use of the \textit{HTC Vive}-controller to pick up objects directly by pulling the trigger. To release the object the trigger needs to be released as well. An object can be grabbed, whenever it is tagged as moveable and collides with the \textit{HTC Vive}-controller. This collision is detected by giving the object a collider, which fits its form best \cite{website:BoxCollider}\cite{website:SphereCollider} and applying a \textit{BoxCollider} to the controller (compare figure~\ref{} \textcolor{red}{PICTURE}). In the script \textit{TouchGrab.cs} in which the interaction method is implemented there will be checked frequently, whether there is a overlap of the collider of the controller with the collider of a moveable object or not. Whenever they collide, the respective object is coloured green to show the user, that he could grab it by pulling the trigger. 
 
 \subsubsection{Close Range: Proximity Grab} \label{sec:ProximityGrab}
-%ungenaueste Methode
-
-The functionality is provided by the script \textit{\textcolor{red}{ProximityGrab.cs}}. The basic idea is that the object can be grabbed, whenever the object triggers the \textit{BoxCollider} \cite{website:BoxCollider} placed at the end of the \textit{HTC Vive}-controller. In contrast to the \textit{Touch Grab} described in section~\ref{sec:TouchGrab} this collider is bigger than the actual size of the controller. 
+\todo[inline, color=yellow]{Laura}
+When it comes to the CR interactions the proximity grab is by far the most inexact selection. Grabbing and releasing and object are realised by using the trigger of the \textit{HTC Vive}-controller.  \\
+The functionality is provided by the script \textit{ProximityGrab.cs}. The basic idea is that the object can be grabbed, whenever the object triggers the \textit{BoxCollider} \cite{website:BoxCollider} placed at the end of the \textit{HTC Vive}-controller. A more detailed description can be found in section \ref{sec:TouchGrab} In contrast to the \textit{Touch Grab} described in section~\ref{sec:TouchGrab} this \textit{BoxCollider} is bigger than the actual size of the controller. To show the user which object collides with the controller and can therefore be grabbed the respective object is coloured green, as shown in figure \textcolor{red}{PICTURE}. 
 
 
 \subsubsection{Close Range: Wand Grab} \label{sec:WandGrab}
+\todo[inline, color=yellow]{Laura}
 In contrast to the interaction method described in \ref{sec:ProximityGrab} this method can be used to grab very tiny objects. Thereby it is not needed that the target object is very isolated from other objects. To give the user such an high grade of accuracy a stick is added to the controller like shown on figure \textcolor{red}{PICTURE}. The user can grab an virtual object he touches with the \textit{HTC Vive}-controller by pulling the trigger. To place the object on the target area he simply release the trigger after he moved the object to its destination. \\
-%Umsetzung in AllRaycastMethods.cs
-
+The implementation can be found in \textit{AllRaycastMethods.cs}. The wand consists of two elements: a ray \cite{website:Ray} and a cube. The cube is only for the visualisation and has a fixed size in all three dimensions. The collision detection, which is necessary for the actual grabbing, is done with the ray. That means, that an object can be grabbed, if the ray which has the same dimensions like the cube, touches this specific object. The cube will then turn from black to green to show the user, that there is an object, which can be grabbed.
 
 \subsubsection{Far Range: Raycast} \label{sec:Raycast}
-%Umsetzung in AllRaycastMethods.cs
+\todo[inline, color=yellow]{Laura}
+By using the raycast method, the user can grab virtual objects, which are further away, as well as objects in his CR. As shown in figure~\textcolor{red}{PICTURE} a ray is coming out of the \textit{HTC Vive}-controller pointing away from the user. At the end of the ray is a small sphere, which turns green, if it collides with an moveable object. Whenever the ray hits an objects, like for example the floor or a product in the supermarket (compare section \textcolor{red}{Section}), the ray is shortened to the distance between the controller and the respective object. \\
+The implementation can be found in the \textit{AllRaycastMethods.cs} script. As already explained in section \ref{sec:WandGrab} a cube and a ray are combined to reach the intended functionality. In contrast to the wand grab, the ray and the visible cube have no fixed length and there is a sphere added to the end of the cube.
+
+
 \subsubsection{Far Range: Extendable Ray} \label{sec:ExtendableRay}
-%Umsetzung in AllRaycastMethods.cs
+\todo[inline, color=yellow]{Laura}
+The actual ray is build as described in section \ref{sec:Raycast}. The ray \cite{website:Ray} is complemented by a cube with a sphere at the end, to make it visible for the user. In contrast to the normal raycast method, the length of the ray is set to a start value of 3 meters. The user can shorten and lengthen the ray by pressing the touchpad of the \textit{HTC Vive}-controller in the lower or rather upper area. This subtracts or adds a constant value to the length of the visible ray. What remains is the behaviour of the sphere, which turns green, whenever a moveable virtual object is brushed. The extendable ray is one of the three interactions methods (compare sections~\ref{sec:WandGrab} and~\ref{sec:Raycast}), which are combined in the \textit{AllRaycastMethods.cs} script.  
+
+
 \subsubsection{Far Range: Raycast Head Mounted Display} \label{sec:RaycastHMD}
-%Der vollständigkeithalber..
-%konnte nicht integirert werden weil...
+\todo[inline, color=yellow]{Laura}
+It was planned to realise an interaction method, where there is a ray coming out of the HMD, which can be used similar to the method described in section~\ref{sec:Raycast}. Due to the low accuracy of this method, it did not become a part of the \textit{Interaction Lab}. There was a try to parent \cite{website:SetParent} the position of the HMD to the starting point of the ray. It turned out, that the parenting is not successful, when it comes to the position and rotation of the HMD. Even this method was effective for adding a ray to the \textit{HTC Vive}-controller, there is a irregular shift when you try to implement it with the HMD. To proof that an easy example (compare source code~\ref{lst:testHMD}) was observed. In this example a simple cube should be rendered at the front of the HMD. In reality this cube was rendered in a position, which can be seen as random. 
 
+\lstinputlisting[title=\lstname, caption={Test on the parenting of \textit{HTC Vive}-HMD and an virtual object.}, label=lst:testHMD, language={[Sharp]C}, linerange=1, firstnumber=1]{SourceCode/HMDtest.cs} 
 
-
+All effort on this method, can be found in the script \textit{RaycastingMethodeHMD.cs}.
 
 
 \subsection{Self-Teaching} \label{sec:selfteaching}
