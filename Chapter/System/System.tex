@@ -34,28 +34,63 @@ In the following sections all available interaction methods of the \textit{Inter
 
 \subsubsection{Close Range: Touch Grab} \label{sec:TouchGrab}
 \todo[inline, color=yellow]{Laura}
-When this interaction method is selected, the user can make use of the \textit{HTC Vive}-controller to pick up objects directly by pulling the trigger. To release the object the trigger needs to be released as well. An object can be grabbed, whenever it is tagged as moveable and collides with the \textit{HTC Vive}-controller. This collision is detected by giving the object a collider, which fits its form best \cite{website:BoxCollider}\cite{website:SphereCollider} and applying a \textit{BoxCollider} to the controller (compare figure~\ref{} \textcolor{red}{PICTURE}). In the script \textit{TouchGrab.cs} in which the interaction method is implemented there will be checked frequently, whether there is a overlap of the collider of the controller with the collider of a moveable object or not. Whenever they collide, the respective object is coloured green to show the user, that he could grab it by pulling the trigger. 
+When this interaction method is selected, the user can make use of the \textit{HTC Vive}-controller to pick up objects directly by pulling the trigger. To release the object the trigger needs to be released as well. An object can be grabbed, whenever it is tagged as moveable and collides with the \textit{HTC Vive}-controller. This collision is detected by giving the object a collider, which fits its form best \cite{website:BoxCollider}\cite{website:SphereCollider} and applying a \textit{BoxCollider} to the controller (compare figure~\ref{fig:touchGrab}). In the script \textit{TouchGrab.cs} in which the interaction method is implemented there will be checked frequently, whether there is a overlap of the collider of the controller with the collider of a moveable object or not. Whenever they collide, the respective object is coloured green to show the user, that he could grab it by pulling the trigger. 
+
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/TouchGrab.PNG}			
+	\caption[Grabbing a virtual Object by using \textit{Touch Grab}.]{Grabbing a virtual Object by using \textit{Touch Grab}.}
+	\label{fig:touchGrab}
+\end{figure}
 
 \subsubsection{Close Range: Proximity Grab} \label{sec:ProximityGrab}
 \todo[inline, color=yellow]{Laura}
 When it comes to the CR interactions the \textit{Proximity Grab} is by far the most inexact selection. Grabbing and releasing and object are realised by using the trigger of the \textit{HTC Vive}-controller.  \\
-The functionality is provided by the script \textit{ProximityGrab.cs}. The basic idea is that the object can be grabbed, whenever the object triggers the \textit{BoxCollider} \cite{website:BoxCollider} placed at the end of the \textit{HTC Vive}-controller. A more detailed description can be found in section \ref{sec:TouchGrab} In contrast to the \textit{Touch Grab} described in section~\ref{sec:TouchGrab} this \textit{BoxCollider} is bigger than the actual size of the controller. To show the user which object collides with the controller and can therefore be grabbed the respective object is coloured green, as shown in figure \textcolor{red}{PICTURE}. 
+The functionality is provided by the script \textit{ProximityGrab.cs}. The basic idea is that the object can be grabbed, whenever the object triggers the \textit{BoxCollider} \cite{website:BoxCollider} placed at the end of the \textit{HTC Vive}-controller. A more detailed description can be found in section \ref{sec:TouchGrab} In contrast to the \textit{Touch Grab} described in section~\ref{sec:TouchGrab} this \textit{BoxCollider} is bigger than the actual size of the controller. To show the user which object collides with the controller and can therefore be grabbed the respective object is coloured green, as shown in figure~\ref{fig:proximityGrab}. The small gap between the actual grabbed object and the controller shows the difference between the interaction method shown in figure~\ref{fig:touchGrab}.
+
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/ProximityGrab.PNG}			
+	\caption[Grabbing a virtual Object by using \textit{Proximity Grab}.]{Grabbing a virtual Object by using \textit{Proximity Grab}.}
+	\label{fig:proximityGrab}
+\end{figure}
 
 
 \subsubsection{Close Range: Wand Grab} \label{sec:WandGrab}
 \todo[inline, color=yellow]{Laura}
-In contrast to the interaction method described in \ref{sec:ProximityGrab} this method can be used to grab very tiny objects. Thereby it is not needed that the target object is very isolated from other objects. To give the user such an high grade of accuracy a stick is added to the controller like shown on figure \textcolor{red}{PICTURE}. The user can grab an virtual object he touches with the \textit{HTC Vive}-controller by pulling the trigger. To place the object on the target area he simply release the trigger after he moved the object to its destination. \\
+In contrast to the interaction method described in \ref{sec:ProximityGrab} this method can be used to grab very tiny objects. Thereby it is not needed that the target object is very isolated from other objects. To give the user such an high grade of accuracy a stick is added to the controller like shown on figure~\ref{fig:wandGrab}. The user can grab an virtual object he touches with the \textit{HTC Vive}-controller by pulling the trigger. To place the object on the target area he simply release the trigger after he moved the object to its destination. \\
 The implementation can be found in \textit{AllRaycastMethods.cs}. The wand consists of two elements: a ray \cite{website:Ray} and a cube. The cube is only for the visualisation and has a fixed size in all three dimensions. The collision detection, which is necessary for the actual grabbing, is done with the ray. That means, that an object can be grabbed, if the ray which has the same dimensions like the cube, touches this specific object. The cube will then turn from black to green to show the user, that there is an object, which can be grabbed.
+
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/WandGrab.PNG}			
+	\caption[Grabbing a virtual Object by using \textit{Wand Grab}.]{Grabbing a virtual Object by using \textit{Wand Grab}.}
+	\label{fig:wandGrab}
+\end{figure}
 
 \subsubsection{Far Range: Raycast} \label{sec:Raycast}
 \todo[inline, color=yellow]{Laura}
-By using the \textit{Raycast} method, the user can grab virtual objects, which are further away, as well as objects in his CR. As shown in figure~\textcolor{red}{PICTURE} a ray is coming out of the \textit{HTC Vive}-controller pointing away from the user. At the end of the ray is a small sphere, which turns green, if it collides with an moveable object. Whenever the ray hits an objects, like for example the floor or a product in the supermarket (compare section~\ref{sec:supermarket}), the ray is shortened to the distance between the controller and the respective object. \\
+By using the \textit{Raycast} method, the user can grab virtual objects, which are further away, as well as objects in his CR. As shown in figure~\ref{fig:raycast} a ray is coming out of the \textit{HTC Vive}-controller pointing away from the user. At the end of the ray is a small sphere, which turns green, if it collides with an moveable object. Whenever the ray hits an objects, like for example the floor or a product in the supermarket (compare section~\ref{sec:supermarket}), the ray is shortened to the distance between the controller and the respective object. \\
 The implementation can be found in the \textit{AllRaycastMethods.cs} script. As already explained in section \ref{sec:WandGrab} a cube and a ray are combined to reach the intended functionality. In contrast to the \textit{Wand Grab}, the ray and the visible cube have no fixed length and there is a sphere added to the end of the cube.
+
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/Raycast.PNG}			
+	\caption[Grabbing a virtual Object by using \textit{Raycast}.]{Grabbing a virtual Object by using \textit{Raycast}.}
+	\label{fig:raycast}
+\end{figure}
 
 
 \subsubsection{Far Range: Extendable Ray} \label{sec:ExtendableRay}
 \todo[inline, color=yellow]{Laura}
-The actual ray is build as described in section \ref{sec:Raycast}. The ray \cite{website:Ray} is complemented by a cube with a sphere at the end, to make it visible for the user. In contrast to the normal \textit{Raycast} method, the length of the ray is set to a start value of 3 meters. The user can shorten and lengthen the ray by pressing the touchpad of the \textit{HTC Vive}-controller in the lower or rather upper area. This subtracts or adds a constant value to the length of the visible ray. What remains is the behaviour of the sphere, which turns green, whenever a moveable virtual object is brushed. The \textit{Extendable Ray} is one of the three interactions methods (compare sections~\ref{sec:WandGrab} and~\ref{sec:Raycast}), which are combined in the \textit{AllRaycastMethods.cs} script.  
+The actual ray is build as described in section \ref{sec:Raycast}. The ray \cite{website:Ray} is complemented by a cube with a sphere at the end, to make it visible for the user. In contrast to the normal \textit{Raycast} method, the length of the ray is set to a start value of 3 meters. The user can shorten and lengthen the ray by pressing the touchpad of the \textit{HTC Vive}-controller in the lower or rather upper area. This subtracts or adds a constant value to the length of the visible ray. What remains is the behaviour of the sphere, which turns green, whenever a moveable virtual object is brushed. The \textit{Extendable Ray} is one of the three interactions methods (compare sections~\ref{sec:WandGrab} and~\ref{sec:Raycast}), which are combined in the \textit{AllRaycastMethods.cs} script. This interaction method is shown on figure~\ref{sec:ExtendableRay}.
+
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/ExtendableRay.PNG}			
+	\caption[Grabbing a virtual Object by using \textit{Extendable Ray}.]{Grabbing a virtual Object by using \textit{Extendable Ray}.}
+	\label{fig:extendableRay}
+\end{figure} 
 
 
 \subsubsection{Far Range: Raycast Head Mounted Display} \label{sec:RaycastHMD}
