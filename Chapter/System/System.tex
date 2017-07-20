@@ -4,25 +4,59 @@
 The actual application can be divided into to type of VR rooms. First of all there is a learning room (compare section~\ref{sec:learningroom}), where the user can get in touch with the different interaction methods and afterwards different tasks will be presented to him in a VR supermarket scenario (compare section~\ref{sec:supermarket}). In the learning room the user will be supported in his learning process by a selfteaching system (compare section~\ref{sec:selfteaching}), which can get switched on and off, when he is in the supermarket. The user can make this setting among all other settings in a Menu  (compare section~\ref{sec:Menu}), which is controllable with the \textit{HTC Vive}-controller. 
 
 \subsection{VR Labor}\label{sec:VRLabor}
-\todo[inline, color=red]{Anna - first rough version}
-In this section the different rooms of the VR Labor will be described. 
+\todo[inline, color=yellow]{Anna}
+In this section the different rooms of the VR Labor will be described. \\
+There are two different kinds of rooms. First there is a simple room to get familiar with the system and the methods, which were implemented. This room will be specified in the section \ref{sec:Learningroom}.\\
+The second room is created to look like a small supermarket. Here the user has to solve different little tasks. This room will be specified in section \ref{sec:supermarket}.
 
-There are two different kinds of rooms. First there is a simple room to get familiar with the system. This room will be specified in the section \ref{sec:Learningroom}. The second kind of room is created to look like a small supermarket. Here the user has to solve different little tasks. This room will be specified in section \ref{sec:supermarket}.
-
-\subsubsection{Learning room} \label{sec:Learningroom} %Bilder fehlen noch
+\subsubsection{Learning room} \label{sec:Learningroom}
 The learning room is the first room where the user will experience the system. On one side the user will get familiar with the virtual experience and the HTC Vive system (HMD and controller). On the other side the user will learn the different interactions. 
 
-The room is designed very clean and simple. In different sizes and distances simple objects, in this case cubes, are distributed randomly. The virtual room is slightly bigger than usable room in reality. So the user is forced to user interactions, which are designed for bigger distances, to move some objects. Due to different colors of the floor the user know how big the real room is approximately. Also the HTC Vive system offers a coloured wire which is shown if the user gets close to the border of the calibrated area.
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/learningRoom2.PNG}			
+	\caption[Overview of the learning room.]{Overview of the learning room.}
+	\label{fig:learning room}
+\end{figure}
 
-%noch richtig doof
-In order that the user already knows the different interactions as well as the menu settings, when he/she enters the supermarket, the menu and interactions are similar in both rooms. To get to know everything the user will be led to the entire learning room by a selfteaching system. This selfteaching will be described in section \ref{sec:selfteaching}. Also the labelling of the target area  and the reaction of this area to the target object will be established.
+The room is designed very clean and simple. In different sizes and distances simple objects, in this case cubes, are distributed randomly, shown in Figure \ref{fig:learning room}. The virtual room is slightly bigger than usable room in reality. So the user is forced to user interactions, which are designed for bigger distances, to move some objects. Due to different colors of the floor the user know how big the real room is approximately. Also the HTC Vive system offers a coloured wire, which is shown in the HMD, if the user gets close to the border of the calibrated area.\\
+The user should already know the different interactions as well as the menu settings, when he/she enters the supermarket. So the menu and interactions are similar in both rooms. Also the labelling of the target object and the reaction of the target area to the target object will be established. This will be described in section \ref{sec:task}.\\ 
+To get to know all settings and methods the user will be led to the entire learning room by a selfteaching system. This selfteaching will be described in section \ref{sec:selfteaching}. 
+
 
 \subsubsection{Supermarket} \label{sec:supermarket} %Bilder fehlen noch
-The second room is a small supermarket. Here are different sized objects in various distances. All objects are things that could be found in a real object, from fruits to milk.
+The second room is a small supermarket. 
 
-Due to the fact that there are several objects, the user has to move other objects in some tasks before he/she reaches the labelled object. 
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/supermarket.PNG}
+	\caption[Overview of the supermarket.]{Overview of the supermarket.}
+	\label{fig:supermarket}
+\end{figure}
 
-In the supermarket is the size of the real room also shown by the color of the floor. The supermarket is bigger than the real room. So interactions for far distance have to be used according to the tasks. Depending on the tasks different target areas can appear in the supermarket. In this situations different objects will be blend out. The different tasks will be described in section?. %\ref 
+Like it is shown in figure \ref{fig:supermarket} in this supermarket are different sized objects in various distances. All objects are things that could be found in a real object, from fruits to milk. This objects were used from the asset store. \textbf{CITE?}\\
+In the supermarket is the size of the real room also shown by the color of the floor. The supermarket is bigger than the real room. So interactions for far distance have to be used according to the tasks.
+
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/supermarket2.PNG}
+	\caption[Closer view of the shelves.]{Closer view of the shelves.}
+	\label{fig:shelve}
+\end{figure}
+
+In some tasks the participant has to pick objects which are hard to pick. On one side they could be at a lower position, on the other side they could have to move other objects before they reach the labelled object. To implement this into a supermarket naturally shelves, like in figure \ref{fig:shelve}, are appropriate for a supermarket. This shelves were build with different scaled cubes.
+
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/supermarket1.PNG}
+	\caption[Closer view of the table.]{Closer view of the table.}
+	\label{fig:table}
+\end{figure}	
+
+In the real supermarket objects are not always in shelves. Also some objects where placed on tables as one bulk, for example fruits and vegetables. This is implied with two tables in this supermarket. The closer look to one of this tables is shown in figure \ref{fig:table}.\\
+Depending on the tasks different target areas can appear in the supermarket. In this situations different objects will be blend out. Also the target object of every tasks will be labelled. The first target area and target object are shown in figure \ref{fig:supermarket}.\\
+ The structure of the labelling of the target object are specified in section \ref{sec:selfteaching}.
+The different tasks as well as the reaction of the target area to the target object will be described in section \ref{sec:task}. %\ref ?
 
 \subsection{Controller Menu} \label{sec:Menu}
 \todo[inline, color=red]{Anna - first rough version} %Bilder fehlen noch
