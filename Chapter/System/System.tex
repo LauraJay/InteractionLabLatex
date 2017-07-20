@@ -34,7 +34,7 @@ The second room is a small supermarket.
 	\label{fig:supermarket}
 \end{figure}
 
-Like it is shown in figure \ref{fig:supermarket} in this supermarket are different sized objects in various distances. All objects are things that could be found in a real object, from fruits to milk. This objects were used from the asset store. \textbf{CITE?}\\
+Like it is shown in figure \ref{fig:supermarket} in this supermarket are different sized objects in various distances. All objects are things that could be found in a real object, from fruits to milk. This objects were used from the asset store. \cite{asset_food1} \cite{asset_food2} \cite{asset_box}\\
 In the supermarket is the size of the real room also shown by the color of the floor. The supermarket is bigger than the real room. So interactions for far distance have to be used according to the tasks.
 
 \begin{figure}[H] 
@@ -59,15 +59,28 @@ Depending on the tasks different target areas can appear in the supermarket. In 
 The different tasks as well as the reaction of the target area to the target object will be described in section \ref{sec:tasks}. %\ref ?
 
 \subsection{Controller Menu} \label{sec:Menu}
-\todo[inline, color=red]{Anna - first rough version} %Bilder fehlen noch
-%Einstellen Interactions und weiterer einstellungen - Teaching/Tasks, Snaping, Reset, Start/Stop
-The controller menu is the main menu of the system to change settings without leaving the virtual environment. Within this menu interaction methods can be changed and settings like snapping for the interactions can be enabled. In the learning room	the user is able to turn the selfteaching informations on and off. In the same way the user can decide if the tasks will be shown or not in the supermarket. In the supermarket is also the option available to start the task again. With the reset button the scene will be reloaded.
+\todo[inline, color=yellow]{Anna}
+The controller menu is the main menu of the system to change settings without leaving the virtual environment. Within this menu interaction methods can be changed and settings like snapping for the interactions can be enabled. In the learning room	the user is able to turn the selfteaching informations on and off. In the same way the user can decide if the tasks will be shown or not in the supermarket. In the supermarket is also the option available to start the task again. With the reset button the scene will be reloaded. The main menu is shown in figure \ref{fig:mainMenu}.
 
-For the measurement, see section ?, the user has to start and stop every tasks. The start button will be the first menu button in every scene. Only if this button is pressed the user can interact with the environment and will be led to the next menu. When the user presses the stop button the switching area will appear and the corresponding box collider will be enabled. If the user reaches this area the next scene will be loaded.
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/Menu1.PNG}
+	\caption[Main menu]{Main menu}
+	\label{fig:mainMenu}
+\end{figure}
 
-%%Plugin, wie aufgebaut, änderungen Unity, Script
-The structure of the menu is built on the Plug-in "VRTK" (Virtual Reality Toolkit). %Referenz?
-This is a free packet with different scripts and prefabs for interaction in the virtual reality. From this plug-in the radial menu is used for the controller menu. This creates menu buttons over the touchpad of the controller of the Vive. By scrolling over the touchpad the button can be selected. The selection will be shown by highlighting the button. If this button should be executed, the touchpad has to be pressed when the button is selected. The number of buttons per menu can be changed within the Unity editor. Each button can get a different icon. Through a link to a function of a script this function can be executed if the button is pressed. In this project there is a menu script in which all functions for the menu are collected. Due to this script different settings can be done. %so richtig schlecht...
+If the button ``select grab'' is available, the user is able to choose every interaction method he or she likes. The button leads to an other menu. In this menu the methods are shown as icons, see figure \ref{fig:grabMenu}. The user learns the meaning of the icons by the selfteaching in the learning room. 
+
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/Menu2.PNG}
+	\caption[select grab menu]{select grab menu}
+	\label{fig:grabMenu}
+\end{figure}
+
+For the measurement, see section \ref{sec:measurement}, the user has to start and stop every tasks. The start button will be the first menu button in every scene. Only if this button is pressed the user can interact with the environment and will be led to the next menu. When the user presses the stop button the switching area will appear and the corresponding box collider will be enabled. If the user reaches this area the next scene will be loaded.\\
+The structure of the menu is built on the Plug-in ``VRTK'' (Virtual Reality Toolkit). \cite{asset_VRTK} \cite{VRTK}\\
+This is a free packet with different scripts and prefabs for interaction in the virtual reality. From this plug-in the radial menu is used for the controller menu. This creates menu buttons over the touchpad of the controller of the Vive. By scrolling over the touchpad the button can be selected. The selection will be shown by highlighting the button. If this button should be executed, the touchpad has to be pressed when the button is selected. The number of buttons per menu can be changed within the Unity editor. Each button can get a different icon. Through a link to a function of a script this function can be executed if the button is pressed. In this project there is a script named \textit{Menu} in which all functions for the menu are collected. Due to this script different settings can be done. %umschreiben?
 
 
 \subsection{Interaction Methods}\label{sec:Interactions}
@@ -161,20 +174,39 @@ All effort on this method, can be found in the script \textit{RaycastingMethodeH
 
 
 \subsection{Self-Teaching} \label{sec:selfteaching}
-\todo[inline, color=red]{Anna - first rough version, Probleme mit reinschreiben oder gesondertes kapitel?}
-%Plugin Prefab für fahnen am controller und an Objekten, Step by step, alles erklärt in Learning room, externes csv file mit Infotext und Button ID und höhe des Fähnchen, Probleme wenn schritte nicht genau eingehalten werden, nur bei auswahl der interactions und ausgewählten anderen Schritten feste Zahl für Counter. Counter wird aus verschiedenen Scripten bei bestimmten actions geändert. Task werden genauso angezeigt.
+\todo[inline, color=yellow]{Anna}
+To introduce the user to the system there will be a teaching in the learning room. When the program will be started informations will be shown next to the controller, like in the following figure. 
 
-To introduce the user to the system there will be a teaching in the learning room. When the program will be started informations will be shown next to the controller. This informations led the user step by step to the system. He/She will get to know how the interaction methods can be changed and what settings can be made. This informations will just be shown in the learning room. The position of the information area changes depending on which button is important for the interaction. 
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/teaching.PNG}
+	\caption[Start of the selfteaching]{Start of the selfteaching}
+	\label{fig:teaching1}
+\end{figure}
 
-All informations and steps are saved in an external CSV-file. Due to an additional script (Name?) this file will be read line after line and be saved into different lists. In each line are three main informations. First there is the text which should be shown in this step. Second is the Button ID, which defines on which button the information should be fixed. Third and last is the hight of the information area. This hight changes depend on the amount of informations. 
+This informations led the user step by step to the system. He/She will get to know how the interaction methods can be changed and what settings can be made. 
 
-In the selfteaching script is a counter implemented. This counter controls which line of the file will be displayed. This counter will be increased or set from different scripts depending on an action. This increasing is still a problem if the user does not follow the selfteaching exactly. For example, if the user grabs a object twice and the selfteaching plans to grab just once, the selfteaching will go on and the user misses information. 
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/teaching2.PNG}
+	\caption[Selfteaching recommends to select touch grab method]{Selfteaching recommends to select touch grab method}
+	\label{fig:teaching2}
+\end{figure}
 
-The task are shown in the supermarket in the same way.
+This informations will just be shown in the learning room. The position of the information area changes depending on which button is important for the interaction. \\
+In the first grab method, the touch grab method, also two terms will be established which are important for all tasks. This terms are the labelling of the target object and the target area. Here the user learns how the target object is marked, see figure \ref{fig:teaching3}, and how the target area reacts to the target object.
 
-The information canvas is also a prefab of the "VRTK" plug-in. Here they are called controller tips. This creates a area next to the controller and a line from this area to the selected button of the controller. This area is parented to the controller and moves according to it. Different settings can be changed within the Unity Editor or by script.
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/teaching3.PNG}
+	\caption[Selfteaching with target object]{Selfteaching with target object}
+	\label{fig:teaching3}
+\end{figure}
 
-The "VRTK" plug-in has also a prefab for object tips. This is also a canvas in which information can be display but this can be fixed on any object you like. With this canvas the target objects of the tasks are labelled in the supermarket.
+All informations and steps of the selfteaching are saved in an external CSV-file. Due to an additional script \textit{WriteMeasureFile.cs} this file will be read line after line and be saved into different lists. In each line are three main informations. First there is the text which should be shown in this step. Second is the Button ID, which defines on which button the information should be fixed. Third and last is the hight of the information area. This hight changes depending on the amount of informations. \\
+In the \textit{SelfTeaching.cs }script is a counter implemented. This counter controls which line of the file will be displayed. This counter will be increased or set from different scripts depending on an action. This increasing is still a problem if the user does not follow the selfteaching exactly. For example, if the user grabs a object twice and the selfteaching plans to grab just once, the selfteaching will go on and the user misses information. \\
+The information canvas is also a prefab of the ``VRTK'' plug-in. Here they are called controller tips. This creates a area next to the controller and a line from this area to the selected button of the controller. This area is parented to the controller and moves according to it. Different settings can be changed within the Unity Editor or by script.\\
+The ``VRTK'' plug-in has also a prefab for object tips. This is also a canvas in which information can be display but this can be fixed on any object you like. With this canvas the target objects are labelled.
 
 
 \newpage
