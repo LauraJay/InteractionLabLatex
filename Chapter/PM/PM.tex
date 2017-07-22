@@ -45,7 +45,7 @@ The system offers a measurement of the accuracy as well. A time measuring of dur
 There are several risks according to the concept in section \ref{sec:Projectconcept}. First, the measurements could be implemented incompletely or inaccurately. This can be avoided by a thorough testing before the final release with some external test persons. The tasks could be incomprehensible for them as well which should be prove as well.
 The system integration future extensions could cause trouble. Therefore, the systems architecture should be designed wisely and consequently to avoid incompatibilities. Another risk of the implementation is that they might be more costly and complex as recommended but this is widely acknowledged. After the implementation is finished the interaction method performance or validation could be too expensive which results in a higher latency. These circumstances must be observed during the implementation and testing. Due to the high workload of the testing, the time slot for it and the trouble shooting might be underestimated. Another time risk is that there is limited access to the facilities and VR laboratory because of the huge number of running project at the current time.
 
-Nevertheless, the concept is feasible and the project goals could be reached during the time schedule because all the risk seems to manageable and could be observed during the scheduled testing.
+Nevertheless, the concept is feasible and the project goals could be achieved during the time schedule because all the risk seems to manageable and could be observed during the scheduled testing.
 
 The demand of the students project are satisfied and a financial profitability check is not necessaries due to the fact that the facilities of the university can be used and no further purchases are affordable.
 
@@ -184,24 +184,25 @@ Understandability of Usability Questionnaire & no questions or uncertainties of 
 	\label{tab:Qaulity Plan}
 \end{table}
 \subsection{Project Execution} \label{sec:ProjectExecution}
-\todo[inline, color=red]{Vera}
+\todo[inline, color=yellow]{Vera}
+The following sections summarizes the project progress as well as the problems that caused a delay of the schedule.
+\subsubsection{Project Progress}
 
-\subsubsection{??}\label{sec:??}
-\todo[inline, color=red]{Vera}
+In general, the project progress went off quite well and most of the project goals were achieved and are running as expected. Therefore, the \textit{Interaction Lab} is a complete and running application that includes all required tools for a scientific study. The final system contains a learning room, a supermarket test scene with implemented task and measuring, the implementation of five different interaction methods to test, completely set of validated usability questionnaires and excel templates for the evaluations.
 
-\subsubsection{??}\label{sec:??}
-\todo[inline, color=red]{Vera}
+However, some of the project goals were too ambitious for the resources capacity in the scheduled time window. Thus, not all project goals were completely achieved. First, the Gogo interaction method and the HMD raycast could not be developed due to the problems mentioned in section \ref{sec:PMProblems}. Second, the number of tasks needed to be reduced significantly because it turned out that they are too time consuming during testing. Hence, only one task was implemented with all provided interaction methods and three tasks to figure out the preferences of the users for various kind of ranges and object sizes. Third, an additional goal was set after the first prototype. A self teaching mode has been added to the learning room to ensure an equal introduction of the methods and task for each test user.
+
+The actual workload of most work packages covers their estimation beside some problems which are described in detail in section \ref{sec:PMProblems}. All team members had a similar work load and the task allocation work efficient and well. Each team member knew their current tasks at every time and had an overview of the complete progress. This overview was achieved with weekly meetings via \textit{Skype} or if affordable in personal. Furthermore, every few weeks we had a meeting with Prof. Grünvogel to give him an update and discuss current problems and their solution.
 
 
-\subsection{Project Completion}
-\todo[inline, color=red]{Vera}
+\subsubsection{Problems and Solutions}\label{sec:PMProblems}
+\todo[inline, color=yellow]{Vera}
 
-\subsubsection{??}\label{sec:??}
-\todo[inline, color=red]{Vera}
+A first problem was the additional work effort because all project plans needed to be overworked which causes a one week delay. In the end it should also be noted the planning was to detailed in the beginning which cause some unnecessary time. Thus, the research phase need to shorten and place on hold for this week but this step brought the project back on time. Another delay of one and a half week causes the inevitable unity and \textit{HTC Vive} system that were more difficult that expected. This kind of problem occurs several times when changing the laboratory due to limited capacities of the designated VR Lab 1 or the periphery of the laboratories were not present. Additional, every time the VR systems needs to be recalibrated when changing the laboratory.
 
-\subsubsection{??}\label{sec:??}
-\todo[inline, color=red]{Vera}
+The VR system causes trouble during the implementation of the HMD Raycast method, too. It turned out that the tracking of the HMD lacks of precision and the ray drifts at the border of the view field. At this point, the number of tasks that must be done to guarantee a working application until the release was challenging. Thus, we concentrate on a working application and discard the HMD Raycast. However, it seems that the implementation of the Gogo method was too complex for this time schedule, too. Hence, it was changed to the Extenable Ray method which could be implemented successfully during the calculated period. 
 
+This decision and the resulting choice of methods had the advantage that their basic structure is adoptable. Regarding to this realisation, it could be said that the split of responsibility for Far and Close Range in the project organisation was a mistake. Accompanied with the decision to create a single C\# script per method. This plenty of scripts caused a lot of trouble during their integration in the final application but these problems were solves by using only one script for similar methods like the ray methods, for example.
 
 \newpage
 
