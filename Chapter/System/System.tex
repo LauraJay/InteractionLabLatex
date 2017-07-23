@@ -4,27 +4,27 @@
 The actual application can be divided into two types of VR rooms. First of all there is a learning room (compare section~\ref{sec:Learningroom}), where the user can get in touch with the different interaction methods and afterwards different tasks will be presented to him in a VR supermarket scenario (compare section~\ref{sec:supermarket}). In the learning room the user will be supported in his learning process by a selfteaching system (compare section~\ref{sec:selfteaching}), which he can switch on and off, when he is in the supermarket. The user can make this setting among all other settings in a Menu  (compare section~\ref{sec:Menu}), which is controllable with the \textit{HTC Vive}-controller. In this menu he can also chose between all provided interaction methods, which are described in section~\ref{sec:Interactions}.
 
 \subsection{VR Labor}\label{sec:VRLabor}
-\todo[inline, color=yellow]{Anna}
-In this section the different rooms of the VR Labor will be described. \\
-There are two different kinds of rooms. First there is a simple room to get familiar with the system and the methods, which were implemented. This room will be specified in the section \ref{sec:Learningroom}.\\
-The second room is created to look like a small supermarket. Here the user has to solve different little tasks. This room will be specified in section \ref{sec:supermarket}.
+%\todo[inline, color=yellow]{Anna}
+In this section the different rooms of the VR Labor will be described. Each room is realised as a \textit{Unity} scene.\\
+There are two different kinds of rooms. First there is a simple room to get familiar with the system and the methods, which were implemented. This room will be specified in  section \ref{sec:Learningroom}.\\
+The second room is created to look like a small supermarket, in which the user has to solve different tasks (compare section~\ref{sec:tasks}). This room will be described in section \ref{sec:supermarket}.
 
 \subsubsection{Learning room} \label{sec:Learningroom}
-The learning room is the first room where the user will experience the system. On one side the user will get familiar with the virtual experience and the HTC Vive system (HMD and controller). On the other side the user will learn the different interactions. 
+The learning room is the first room where the user will get to know the system. On one hand the user will get familiar with the virtual experience and the \textit{HTC Vive} system (HMD and controller) and on the other hand the user will learn the different interaction methods. 
 
 \begin{figure}[H] 
 	\center 
 	\includegraphics[width=12cm]{Images/learningRoom2.PNG}			
-	\caption[Overview of the learning room.]{Overview of the learning room.}
+	\caption[Overview of the Learning Room.]{Overview of the Learning Room.}
 	\label{fig:learning room}
 \end{figure}
 
-The room is designed very clean and simple. In different sizes and distances simple objects, in this case cubes, are distributed randomly, shown in Figure \ref{fig:learning room}. The virtual room is slightly bigger than usable room in reality. So the user is forced to user interactions, which are designed for bigger distances, to move some objects. Due to different colors of the floor the user know how big the real room is approximately. Also the HTC Vive system offers a coloured wire, which is shown in the HMD, if the user gets close to the border of the calibrated area.\\
-The user should already know the different interactions as well as the menu settings, when he/she enters the supermarket. So the menu and interactions are similar in both rooms. Also the labelling of the target object and the reaction of the target area to the target object will be established. This will be described in section \ref{sec:task}.\\ 
-To get to know all settings and methods the user will be led to the entire learning room by a selfteaching system. This selfteaching will be described in section \ref{sec:selfteaching}. 
+The room is designed very clean and simple. In different sizes and distances simple objects, in this case cubes, are distributed randomly. This is shown in figure \ref{fig:learning room}. The virtual room is slightly bigger than the usable room in reality. So the user is forced to user interactions, which are designed for larger distances, to move some objects (compare sections~\ref{sec:Raycast} and~\ref{sec:ExtendableRay}). Due to different colors of the floor the user know how big the real room is approximately. In addition the \textit{HTC Vive} system offers a coloured wire, which is shown in the HMD, whenever the user gets too close to the border of the calibrated area.\\
+The user should already know the different interactions as well as the menu settings, when he/she enters the supermarket scene. So the menu and interactions are similar in both rooms. Also the labelling of the target object and the reaction of the target area to the target object will be established. This will be described in section~{sec:tasks}.\\ 
+To get to know all settings and methods the user will be led to the entire learning room by a selfteaching system. This selfteaching is be described in section \ref{sec:selfteaching}. 
 
 
-\subsubsection{Supermarket} \label{sec:supermarket} %Bilder fehlen noch
+\subsubsection{Supermarket} \label{sec:supermarket} 
 The second room is a small supermarket. 
 
 \begin{figure}[H] 
@@ -34,53 +34,54 @@ The second room is a small supermarket.
 	\label{fig:supermarket}
 \end{figure}
 
-Like it is shown in figure \ref{fig:supermarket} in this supermarket are different sized objects in various distances. All objects are things that could be found in a real object, from fruits to milk. This objects were used from the asset store. \cite{asset_food1} \cite{asset_food2} \cite{asset_box}\\
-In the supermarket is the size of the real room also shown by the color of the floor. The supermarket is bigger than the real room. So interactions for far distance have to be used according to the tasks.
+Like it is shown in figure \ref{fig:supermarket} in this supermarket are different sized objects in various distances. All objects could be found in a real supermarket, from fruits to milk. This objects were dowloaded from the asset store \cite{asset_food1} \cite{asset_food2} \cite{asset_box}. \\
+The size of the real room is also displayed by using a slightly darker colour on the floor of the supermarket. This is necessary, because the supermarket is bigger than the real room. So interactions for far distance have to be used according to the tasks.
 
 \begin{figure}[H] 
 	\center 
 	\includegraphics[width=12cm]{Images/supermarket2.PNG}
-	\caption[Closer view of the shelves.]{Closer view of the shelves.}
+	\caption[Closer View of the Shelves.]{Closer view of the Shelves.}
 	\label{fig:shelve}
 \end{figure}
 
-In some tasks the participant has to pick objects which are hard to pick. On one side they could be at a lower position, on the other side they could have to move other objects before they reach the labelled object. To implement this into a supermarket naturally shelves, like in figure \ref{fig:shelve}, are appropriate for a supermarket. This shelves were build with different scaled cubes.
+In some tasks the participant has to grab objects which are hard to pick. On one side they could be at a lower position, on the other side they could have to move other objects before they reach the labelled object. To implement this into a supermarket naturally shelves, like in figure \ref{fig:shelve}, are appropriate for a supermarket. This shelves were build with different scaled cubes.
 
 \begin{figure}[H] 
 	\center 
 	\includegraphics[width=12cm]{Images/supermarket1.PNG}
-	\caption[Closer view of the table.]{Closer view of the table.}
+	\caption[Closer View of the Table.]{Closer View of the Table.}
 	\label{fig:table}
 \end{figure}	
 
-In the real supermarket objects are not always in shelves. Also some objects where placed on tables as one bulk, for example fruits and vegetables. This is implied with two tables in this supermarket. The closer look to one of this tables is shown in figure \ref{fig:table}.\\
-Depending on the tasks different target areas can appear in the supermarket. In this situations different objects will be blend out. Also the target object of every tasks will be labelled. The first target area and target object are shown in figure \ref{fig:supermarket}.\\
+In a real supermarket objects are not always arranged in shelves. Due to this fact and to have a variance for the tasks,  some objects where placed on tables as one bulk, for example fruits and vegetables. There are two tables in this supermarket. A closer look to one of this tables is given in figure \ref{fig:table}.\\
+Depending on the task different target areas can appear in the supermarket. In this situations different objects will be blend out. Also the target object of every tasks will be labelled. The first target area and target object are shown in figure \ref{fig:supermarket}.\\
  The structure of the labelling of the target object are specified in section \ref{sec:selfteaching}.
-The different tasks as well as the reaction of the target area to the target object will be described in section \ref{sec:tasks}. %\ref ?
+The different tasks as well as the reaction of the target area to the target object will be described in section \ref{sec:tasks}.
 
 \subsection{Controller Menu} \label{sec:Menu}
-\todo[inline, color=yellow]{Anna}
-The controller menu is the main menu of the system to change settings without leaving the virtual environment. Within this menu interaction methods can be changed and settings like snapping for the interactions can be enabled. In the learning room	the user is able to turn the selfteaching informations on and off. In the same way the user can decide if the tasks will be shown or not in the supermarket. In the supermarket is also the option available to start the task again. With the reset button the scene will be reloaded. The main menu is shown in figure \ref{fig:mainMenu}.
+\todo[inline, color=red]{Anna}
+The controller menu is the main menu of the system. It allows to change settings without leaving the virtual environment. Within this menu interaction methods can be changed and settings like snapping for the interactions can be enabled. In the learning room	the user is able to turn the selfteaching informations on and off. In the same way the user can decide if the tasks will be shown or not in the supermarket. In the supermarket scene the user can restart a single task via the controller menu. With the reset button the scene will be reloaded. The main menu is shown in figure~\ref{fig:mainMenu}.
 
 \begin{figure}[H] 
 	\center 
 	\includegraphics[width=12cm]{Images/Menu1.PNG}
-	\caption[Main menu]{Main menu}
+	\caption[Main Menu of the Controller Menu.]{Main Menu of the Controller Menu.}
 	\label{fig:mainMenu}
 \end{figure}
 
-If the button ``select grab'' is available, the user is able to choose every interaction method he or she likes. The button leads to an other menu. In this menu the methods are shown as icons, see figure \ref{fig:grabMenu}. The user learns the meaning of the icons by the selfteaching in the learning room. 
+If the button ``select grab'' is available, the user is able to choose every interaction method he or she likes. The button leads to an other menu. In this menu the methods are shown as icons, see figure \ref{fig:grabMenu}. The user learns the meaning of those icons with the help of the selfteaching, while they are in the learning room. 
 
 \begin{figure}[H] 
 	\center 
 	\includegraphics[width=12cm]{Images/Menu2.PNG}
-	\caption[select grab menu]{select grab menu}
+	\caption[Select Grab Menu.]{Select Grab Menu.}
 	\label{fig:grabMenu}
 \end{figure}
 
-For the measurement, see section \ref{sec:measurement}, the user has to start and stop every tasks. The start button will be the first menu button in every scene. Only if this button is pressed the user can interact with the environment and will be led to the next menu. When the user presses the stop button the switching area will appear and the corresponding box collider will be enabled. If the user reaches this area the next scene will be loaded.\\
-The structure of the menu is built on the Plug-in ``VRTK'' (Virtual Reality Toolkit). \cite{asset_VRTK} \cite{VRTK}\\
-This is a free packet with different scripts and prefabs for interaction in the virtual reality. From this plug-in the radial menu is used for the controller menu. This creates menu buttons over the touchpad of the controller of the Vive. By scrolling over the touchpad the button can be selected. The selection will be shown by highlighting the button. If this button should be executed, the touchpad has to be pressed when the button is selected. The number of buttons per menu can be changed within the Unity editor. Each button can get a different icon. Through a link to a function of a script this function can be executed if the button is pressed. In this project there is a script named \textit{Menu} in which all functions for the menu are collected. Due to this script different settings can be done. %umschreiben?
+For the measurement, which are described in section \ref{sec:measurement}, the user has to start and stop every tasks. The start button will be the first menu button in every scene. Only if this button is pressed the user can interact with the environment and will be led to the next menu. When the user presses the stop button the switching area will appear and the corresponding \textit{BoxCollider} \cite{website:BoxCollider} will be enabled. If the user reaches this area the next scene will be loaded.\\
+The structure of the menu is built on the plug-in ``VRTK'' (Virtual Reality Toolkit) \cite{asset_VRTK} \cite{VRTK}.\\
+\textcolor{red}{@Anna: Die VRTK müsstest du schon in den Materialien erklären. Ich denke dann kann man den nächsten Absatz auch ein bisschen kürzer schreiben.}
+This is a free packet with different scripts and prefabs for interaction in the virtual reality. From this plug-in the radial menu is used for the controller menu. This creates menu buttons over the touchpad of the \textit{HTC Vive} controller. By scrolling over the touchpad the button can be selected. The selection will be shown by highlighting the button. If this button should be executed, the touchpad has to be pressed when the button is selected. The number of buttons per menu can be changed within the \textit{Unity} editor. Each button can get a different icon. Through a link to a functionof a script this function can be executed if the button is pressed. In this project there is a script named \textit{Menu.cs} in which all functions for the menu are collected. Due to this script different settings can be chosen.
 
 
 \subsection{Interaction Methods}\label{sec:Interactions}
@@ -175,39 +176,41 @@ All effort on this method, can be found in the script \textit{RaycastingMethodeH
 
 
 \subsection{Self-Teaching} \label{sec:selfteaching}
-\todo[inline, color=yellow]{Anna}
-To introduce the user to the system there will be a teaching in the learning room. When the program will be started informations will be shown next to the controller, like in the following figure. 
+\todo[inline, color=red]{Anna}
+To guarantee an easy and smooth introduction to the system, an automatic selfteaching is integrated into the learning room. When the program is started all necessary instructions will be shown next to the controller, like shown in figure~\ref{fig:teaching1}. 
 
 \begin{figure}[H] 
 	\center 
 	\includegraphics[width=12cm]{Images/teaching.PNG}
-	\caption[Start of the selfteaching]{Start of the selfteaching}
+	\caption[Start of the Selfteaching.]{Start of the Selfteaching.}
 	\label{fig:teaching1}
 \end{figure}
 
-This informations led the user step by step to the system. He/She will get to know how the interaction methods can be changed and what settings can be made. 
+This instructions led the user step by step through the system. He/She will get to know how the interaction methods can be chosen and what settings can be made. Of course the actual grabbing and releasing of an object is taught as well, for every interaction method. 
 
 \begin{figure}[H] 
 	\center 
 	\includegraphics[width=12cm]{Images/teaching2.PNG}
-	\caption[Selfteaching recommends to select touch grab method]{Selfteaching recommends to select touch grab method}
+	\caption[Selfteaching recommends to select \textit{Touch Grab} method.]{Selfteaching recommends to select\textit{Touch Grab} method.}
 	\label{fig:teaching2}
 \end{figure}
 
-This informations will just be shown in the learning room. The position of the information area changes depending on which button is important for the interaction. \\
-In the first grab method, the touch grab method, also two terms will be established which are important for all tasks. This terms are the labelling of the target object and the target area. Here the user learns how the target object is marked, see figure \ref{fig:teaching3}, and how the target area reacts to the target object.
+The instructions will only be visible in the learning room. The position of the information area changes depending on which button is important for the interaction. \\
+In the first grab method, the \textit{Touch Grab} method, two terms will be established, which are important for all tasks. This terms are the labelling of the target object and the target area. Here the user learns how the target object is marked, compare figure \ref{fig:teaching3}, and how the target area reacts to the target object.
 
 \begin{figure}[H] 
 	\center 
 	\includegraphics[width=12cm]{Images/teaching3.PNG}
-	\caption[Selfteaching with target object]{Selfteaching with target object}
+	\caption[Selfteaching with Target Object.]{Selfteaching with Target Object.}
 	\label{fig:teaching3}
 \end{figure}
 
-All informations and steps of the selfteaching are saved in an external CSV-file. Due to an additional script \textit{WriteMeasureFile.cs} this file will be read line after line and be saved into different lists. In each line are three main informations. First there is the text which should be shown in this step. Second is the Button ID, which defines on which button the information should be fixed. Third and last is the hight of the information area. This hight changes depending on the amount of informations. \\
-In the \textit{SelfTeaching.cs }script is a counter implemented. This counter controls which line of the file will be displayed. This counter will be increased or set from different scripts depending on an action. This increasing is still a problem if the user does not follow the selfteaching exactly. For example, if the user grabs a object twice and the selfteaching plans to grab just once, the selfteaching will go on and the user misses information. \\
-The information canvas is also a prefab of the ``VRTK'' plug-in. Here they are called controller tips. This creates a area next to the controller and a line from this area to the selected button of the controller. This area is parented to the controller and moves according to it. Different settings can be changed within the Unity Editor or by script.\\
-The ``VRTK'' plug-in has also a prefab for object tips. This is also a canvas in which information can be display but this can be fixed on any object you like. With this canvas the target objects are labelled.
+
+\textcolor{red}{@Anna: Vielleicht ist es hier verständlicher wenn du einfach ein Bild von einem Auszug des Files reinpackst? So ist das glaube ich ein wenig kompliziert zum vorstellen. oder was meinst du?}
+All instructions and steps of the selfteaching are saved in an external CSV-file. Due to an additional script \textit{WriteMeasureFile.cs} this file will be read line after line and be saved into different lists. In each line are three main information. First there is the text which should be shown in this step. Second is the Button ID, which defines on which button the information should be fixed. Third and last is the height of the information area. This height changes depending on the amount of information. \\
+In the \textit{SelfTeaching.cs }script is a counter implemented. This counter controls which line of the file will be displayed. It will be increased or set from different scripts depending on an action. This increasing is still a problem if the user does not follow the selfteaching exactly. For example, if the user grabs an object twice and the selfteaching plans to grab just once, the selfteaching will go on and the user misses instructions. \\
+The instruction canvas is also a prefab of the ``VRTK'' plug-in. Here they are called controller tips. This creates a area next to the controller and a line from this area to the selected button of the controller. This area is parented to the controller and moves according to it. Different settings can be changed within the \textit{Unity} editor or by a script.\\
+The ``VRTK'' plug-in has also a prefab for object tips. This is also a canvas in which information can be displayed, but this can be fixed on any object you like. With this canvas the target objects are labelled.
 
 
 \newpage
