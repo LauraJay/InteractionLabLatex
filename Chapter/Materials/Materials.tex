@@ -1,17 +1,12 @@
 \section{Materials}\label{sec:Materials}
-\todo[inline, color=yellow]{Britta}
-
 The following section will give an overview over all hard- and software that was used in this project. 
 
 \subsection{Hardware}\label{sec:Hardware}
-%\todo[inline, color=yellow{Britta}
-
 The hardware consists of a head-mounted display, the HTC Vive and a computer. 
 
 \subsubsection{Computer}\label{sec:Computer}
-%\todo[inline, color=yellow{Britta}
 
-\begin{table}
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|}
 		\hline
@@ -33,9 +28,9 @@ The hardware consists of a head-mounted display, the HTC Vive and a computer.
 	\label{tab:Computer}
 \end{table}
 
-The hard- and software requirements for using \textit{Unity} with the \textit{HTC Vive}, which can be seen in table~\ref{tab:viveReq}, are being exceeded by the used computer.   
+The hard- and software requirements for using \textit{Unity} with the \textit{HTC Vive}, which are listed in Table~\ref{tab:viveReq}, are being exceeded by the used computer.   
 
-\begin{table}
+\begin{table}[H]
 	\centering
 	\begin{tabular}{|l|l|}
 		\hline
@@ -61,35 +56,25 @@ The hard- and software requirements for using \textit{Unity} with the \textit{HT
 \end{table}
 
 \subsubsection{HTC Vive}\label{sec:Vive} 
-%\todo[inline, color=yellow]{Britta}
+The \textit{HTC Vive} is a head-mounted display which is being produced by \textit{HTC} in cooperation with \textit{Valve}~\cite{website:Valve}. It was introduced on the 1st of March 2015 at the \textit{Mobile World Congress}~\cite{website:mobileworldcongress}.The resolution of the integrated display is $2160\times1200$\,pixels which equals $1080\times1200$\, pixels per eye. The head-mounted display offers a field of vision of $110^\circ$ with a refresh rate of $90\,Hz$ \cite{website:HTC_Vive}.
+The system requirements can be seen in table \ref{tab:viveReq}. \\ \textcolor{red}{Hier wird dreimal "the" als Satzanfang benutzt.}
 
-The \textit{HTC Vive}  is a head-mounted display which is being produced by \textit{HTC} in cooperation with \textit{Valve}~\cite{website:Valve}. It was introduced on the 1st of March 2015 at the \textit{Mobile World Congress}~\cite{website:mobileworldcongress}.\\ The resolution of the integrated display is $2160\times1200$\,pixels which equals $1080\times1200$\,pixels per eye. The head-mounted display offers a field of vision of $110^\circ$ with a refresh rate of  $90\,Hz$ \cite{website:HTC_Vive}.
-The system requirements can be seen in table \ref{tab:viveReq}. \\
-
-To determine the head-mounted displays position within the room the lighthouse technology~\cite{website:Lighthouses} by \textit{Valve} is used. Additionally the head-mounted display is equipped with a gyroscope, a acceleration sensor and an laser position measurer. The interaction with virtual objects is made possible with proprietary hand controller. 
+To determine the head-mounted displays position within the room, the lighthouse technology~\cite{website:Lighthouses} by \textit{Valve} is used. \textcolor{red}{Evtl. Furthermore, the lighthouse technology by .... used to determine ... room.} Additional, the head-mounted display is equipped with a gyroscope, an acceleration sensor and a laser position measurer. The interaction with virtual objects is made possible with a proprietary hand controller. 
 	
 	\subsection{Software}
-%\todo[inline, color=yellow]{Britta}
-	
 	
 	\subsubsection{Unity}\label{sec:unity}
-%\todo[inline, color=yellow]{Britta}
-	
-	\textit{Unity} is a so called game engine, meaning a developing and runtime environment, which was created for the development of 3D games. The software was released on the 6th of June 2005 \cite{haas2014histor} and is being developed and marketed by \textit{Unity Technologies} \cite{website:Unity}. Unity is widely used in the game development industry, $34\,\%$ of the Top1000  mobile free to play games are developed with \textit{Unity} \cite{website:UnityPR}. 
+	\textit{Unity} is a so called game engine, meaning a developing and runtime environment, which was created for the development of 3D games. The software was released on the 6th of June 2005 \cite{haas2014histor} and is being developed and marketed by \textit{Unity Technologies} \cite{website:Unity}. Unity is widely used in the game development industry. $34\,\%$ of the Top~1000 mobile free to play games are developed with \textit{Unity} \cite{website:UnityPR}. \textcolor{red}{Kann es sein dass dieser Satz keinen Sinn ergibt?}
 	
 	\textit{Unity} offers broad platform support \cite{website:UnityMultiPlatform} and also allows the development for head-mounted display, like the \textit{Oculus Rift} \cite{website:UnityVRoverview} or the \textit{HTC Vive} \cite{website:UnityVRoverview}, which was used in this project.
 	
 	\subsubsection{Visual Studio 2015}\label{sec:VisualStudio}
-%\todo[inline, color=yellow]{Britta}
-	
-	\textit{Micosoft Visual Studio 2015} is a widespread development environment (IDE). It supports the programming languages Visual Basic, Visual C$\#$, and Visual C++ amongst others. With the help of the IDE a developer can program and compile Win32/ Win64 applications and web applications. For \textit{Interaction Lab} version~$14.0.\-25123.00$ update $2$ was used.
+	\textit{Micosoft Visual Studio 2015} is a widespread development environment (IDE). It supports the programming languages Visual Basic, Visual C$\#$, and Visual C++ amongst others. With the help of the IDE a developer can program and compile Win32/ Win64 and web applications. For \textit{Interaction Lab} version~$14.0.\-25123.00$ update $2$ was used. \textcolor{red}{Hier fehlt noch die Referenz. Ich glaube ich habe damals einfach auf die Homepage verwiesen.}
 	
 	\subsubsection{Steam VR}
-%\todo[inline, color=yellow]{Britta}
-	
-	\textit{Steam VR} \cite{website:steamVR} is the interface between the \textit{HTC Vive} and \textit{Unity}. \textit{Steam VR} has to be installed on the computer to use the head-mounted display. A small GUI element can be seen on the monitor, which show the current status of the \textit{Vive}. It communicates error messages and is used of calibrating the system. \\
-	Within \textit{Unity} \textit{Steam} provides a plug-in, which can be embedded into the \textit{Unity}  scenes. The developer can use the VR options easily by drag-and-dropping them into existing \textit{Unity} scenes. 
-	The provided \textit{Unity} prefab includes all necessary elements to communicate with the hardware. A determination of position and a camera rig for the stereoscopic display is provided as well as the possibility for controller input and further use of this data.
+	\textit{Steam VR} \cite{website:steamVR} is an interface between the \textit{HTC Vive} and \textit{Unity}. \textit{Steam VR} has to be installed on the computer to use the head-mounted display (HMD). A small GUI element can be seen on the monitor, which show the current status of the \textit{HTC Vive}. It communicates error messages and is used for the system calibrating. \\
+	Within \textit{Unity}, \textit{Steam} provides a plug-in, which can be embedded into the \textit{Unity} scenes. The developer could integrate the VR options easily per drag-and-drop into a existing \textit{Unity} scene. 
+	The provided \textit{Unity} prefab includes all necessary elements to communicate with the hardware. A determination of position and a camera rig for the stereoscopic display is provided as well as the possibility for hand controller input and further use of this data.
 	
 	\subsubsection{Virtual Reality Toolkit (VRTK)}
 	\todo[inline, color=red]{Anna}
