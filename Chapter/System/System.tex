@@ -55,11 +55,11 @@ In some tasks the participant has to grab objects which are hard to pick. On one
 
 In a real supermarket objects are not always arranged in shelves. Due to this fact and to have a variance for the tasks,  some objects where placed on tables as one bulk, for example fruits and vegetables. There are two tables in this supermarket. A closer look to one of this tables is given in figure \ref{fig:table}.\\
 Depending on the task different target areas can appear in the supermarket. In this situations different objects will be blend out. Also the target object of every tasks will be labelled. The first target area and target object are shown in figure \ref{fig:supermarket}.\\
- The structure of the labelling of the target object are specified in section \ref{sec:selfteaching}.
+The structure of the labelling of the target object are specified in section \ref{sec:selfteaching}.
 The different tasks as well as the reaction of the target area to the target object will be described in section \ref{sec:tasks}.
 
 \subsection{Controller Menu} \label{sec:Menu}
-\todo[inline, color=red]{Anna}
+%\todo[inline, color=red]{Anna}
 The controller menu is the main menu of the system. It allows to change settings without leaving the virtual environment. Within this menu interaction methods can be changed and settings like snapping for the interactions can be enabled. In the learning room	the user is able to turn the selfteaching informations on and off. In the same way the user can decide if the tasks will be shown or not in the supermarket. In the supermarket scene the user can restart a single task via the controller menu. With the reset button the scene will be reloaded. The main menu is shown in figure~\ref{fig:mainMenu}.
 
 \begin{figure}[H] 
@@ -79,9 +79,8 @@ If the button ``select grab'' is available, the user is able to choose every int
 \end{figure}
 
 For the measurement, which are described in section \ref{sec:measurement}, the user has to start and stop every tasks. The start button will be the first menu button in every scene. Only if this button is pressed the user can interact with the environment and will be led to the next menu. When the user presses the stop button the switching area will appear and the corresponding \textit{BoxCollider} \cite{website:BoxCollider} will be enabled. If the user reaches this area the next scene will be loaded.\\
-The structure of the menu is built on the plug-in ``VRTK'' (Virtual Reality Toolkit) \cite{asset_VRTK} \cite{VRTK}.\\
-\textcolor{red}{@Anna: Die VRTK müsstest du schon in den Materialien erklären. Ich denke dann kann man den nächsten Absatz auch ein bisschen kürzer schreiben.}
-This is a free packet with different scripts and prefabs for interaction in the virtual reality. From this plug-in the radial menu is used for the controller menu. This creates menu buttons over the touchpad of the \textit{HTC Vive} controller. By scrolling over the touchpad the button can be selected. The selection will be shown by highlighting the button. If this button should be executed, the touchpad has to be pressed when the button is selected. The number of buttons per menu can be changed within the \textit{Unity} editor. Each button can get a different icon. Through a link to a functionof a script this function can be executed if the button is pressed. In this project there is a script named \textit{Menu.cs} in which all functions for the menu are collected. Due to this script different settings can be chosen.
+The structure of the menu is built on the plug-in ``VRTK'' which is described in section \ref{sec:VRTK}.\\
+In this project there is a script named \textit{Menu.cs} in which all functions for the menu are collected. Due to this script different settings can be chosen.
 
 
 \subsection{Interaction Methods}\label{sec:Interactions}
@@ -176,7 +175,7 @@ All effort on this method can be found in the script \textit{RaycastingMethodeHM
 
 
 \subsection{Self-Teaching} \label{sec:selfteaching}
-\todo[inline, color=red]{Anna}
+\todo[inline, color=yellow]{Anna}
 To guarantee an easy and smooth introduction to the system, an automatic selfteaching is integrated into the learning room. When the program is started all necessary instructions will be shown next to the controller, like shown in figure~\ref{fig:teaching1}. 
 
 \begin{figure}[H] 
@@ -206,11 +205,21 @@ In the first grab method, the \textit{Touch Grab} method, two terms will be esta
 \end{figure}
 
 
-\textcolor{red}{@Anna: Vielleicht ist es hier verständlicher wenn du einfach ein Bild von einem Auszug des Files reinpackst? So ist das glaube ich ein wenig kompliziert zum vorstellen. oder was meinst du?}
-All instructions and steps of the selfteaching are saved in an external CSV-file. Due to an additional script \textit{WriteMeasureFile.cs} this file will be read line after line and be saved into different lists. In each line are three main information. First there is the text which should be shown in this step. Second is the Button ID, which defines on which button the information should be fixed. Third and last is the height of the information area. This height changes depending on the amount of information. \\
-In the \textit{SelfTeaching.cs }script is a counter implemented. This counter controls which line of the file will be displayed. It will be increased or set from different scripts depending on an action. This increasing is still a problem if the user does not follow the selfteaching exactly. For example, if the user grabs an object twice and the selfteaching plans to grab just once, the selfteaching will go on and the user misses instructions. \\
-The instruction canvas is also a prefab of the ``VRTK'' plug-in. Here they are called controller tips. This creates a area next to the controller and a line from this area to the selected button of the controller. This area is parented to the controller and moves according to it. Different settings can be changed within the \textit{Unity} editor or by a script.\\
-The ``VRTK'' plug-in has also a prefab for object tips. This is also a canvas in which information can be displayed, but this can be fixed on any object you like. With this canvas the target objects are labelled.
+\textcolor{red}{Ab hier bitte nochmal jemand drüberlesen}
+All instructions and steps of the selfteaching are saved in an external CSV-file, see following figure. 
+
+\begin{figure}[H] 
+	\center 
+	\includegraphics[width=12cm]{Images/selfteachingCSV.JPG}
+	\caption[Extract of the CSV-file of the instructions of the selfteaching.]{[Extract of the CSV-file of the instructions of the selfteaching.}
+	\label{fig:teachingCSV}
+\end{figure}
+
+Due to an additional script \textit{WriteMeasureFile.cs} this file will be read line after line and be saved into different lists. In each line are four main information. The first number has no effect any more. The first important information is the text which should be shown in this step. Second is the Button ID, which defines on which button the information should be fixed. Third is a number which characterises if a material should be loaded. If this number is a $-1$, no material will be loaded and the text will be displayed on its own. If this number is a $0$ a specific material will be loaded into the canvas. Which material will be loaded is defined in the \textit{SelfTeaching.cs }script. The fourth and last information of the CSV-file is the height of the information area. This height changes depending on the amount of information. For each of this informations a list is implemented in the \textit{SelfTeaching.cs }script.\\
+In this script is also a counter implemented. This counter controls which line of the file will be displayed. It will be increased or set from different scripts depending on an action. This increasing is still a problem if the user does not follow the selfteaching exactly. For example, if the user grabs an object twice and the selfteaching plans to grab just once, the selfteaching will go on and the user misses instructions. \\
+The instruction canvas is established by the \textit{controller tips} prefab of the ``VRTK'' plug-in, see section \ref{sec:VRTK}. This plug-in has also a prefab for \textit{object tips}. With this prefab the target objects are labelled.
+
+
 
 
 \newpage
