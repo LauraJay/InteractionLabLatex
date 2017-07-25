@@ -175,7 +175,7 @@ All effort on this method can be found in the script \textit{RaycastingMethodeHM
 
 
 \subsection{Self-Teaching} \label{sec:selfteaching}
-\todo[inline, color=yellow]{Anna}
+\todo[inline, color=red]{Anna}
 To guarantee an easy and smooth introduction to the system, an automatic selfteaching is integrated into the learning room. When the program is started all necessary instructions will be shown next to the controller, like shown in figure~\ref{fig:teaching1}. 
 
 \begin{figure}[H] 
@@ -204,22 +204,18 @@ In the first grab method, the \textit{Touch Grab} method, two terms will be esta
 	\label{fig:teaching3}
 \end{figure}
 
-
-\textcolor{red}{Ab hier bitte nochmal jemand drüberlesen}
 All instructions and steps of the selfteaching are saved in an external CSV-file, see following figure. 
 
 \begin{figure}[H] 
 	\center 
-	\includegraphics[width=12cm]{Images/selfteachingCSV.JPG}
-	\caption[Extract of the CSV-file of the instructions of the selfteaching.]{[Extract of the CSV-file of the instructions of the selfteaching.}
+	\includegraphics[width=15cm]{Images/selfteachingCSV.JPG}
+	\caption[Extract of the CSV-file of the instructions of the selfteaching.]{Extract of the CSV-file of the instructions of the selfteaching.}
 	\label{fig:teachingCSV}
 \end{figure}
 
-Due to an additional script \textit{WriteMeasureFile.cs} this file will be read line after line and be saved into different lists. In each line are four main information. The first number has no effect any more. The first important information is the text which should be shown in this step. Second is the Button ID, which defines on which button the information should be fixed. Third is a number which characterises if a material should be loaded. If this number is a $-1$, no material will be loaded and the text will be displayed on its own. If this number is a $0$ a specific material will be loaded into the canvas. Which material will be loaded is defined in the \textit{SelfTeaching.cs }script. The fourth and last information of the CSV-file is the height of the information area. This height changes depending on the amount of information. For each of this informations a list is implemented in the \textit{SelfTeaching.cs }script.\\
-In this script is also a counter implemented. This counter controls which line of the file will be displayed. It will be increased or set from different scripts depending on an action. This increasing is still a problem if the user does not follow the selfteaching exactly. For example, if the user grabs an object twice and the selfteaching plans to grab just once, the selfteaching will go on and the user misses instructions. \\
+Due to an additional script \textit{WriteMeasureFile.cs} this file will be read line after line and be saved into different lists. In each line are four main information. The first number has no effect any more. The first important information is the text which should be shown in this step. Second is the Button ID, which defines on which button the information should be fixed. Third is a number which characterises if a material should be loaded.\textcolor{red}{Vielleicht hier die Nummerierung nach den Spalten machen also stringent von 1-4? Auch wenn die erste Zahl nicht mehr notwenig ist?} If this number is a $-1$, no material will be loaded and the text will be displayed on its own. If this number equals $0$ a specific material will be loaded into the canvas. Which material will be loaded is defined in the \textit{SelfTeaching.cs }script. The fourth \textcolor{red}{When ja dann hier fifth :)}and last information of the CSV-file is the height of the information area. This height changes depending on the amount of information. For each of this information a list is implemented in the \textit{SelfTeaching.cs} script.\\
+In this script a counter is implemented. This counter controls which line of the file will be displayed. It will be increased or set from different scripts depending on an action. This increasing is still a problem, if the user does not follow the instructions of the selfteaching step by step. For example, if the user grabs an object twice and the selfteaching plans to grab it just once, the selfteaching will go on and the user misses instructions. \\
 The instruction canvas is established by the \textit{controller tips} prefab of the ``VRTK'' plug-in, see section \ref{sec:VRTK}. This plug-in has also a prefab for \textit{object tips}. With this prefab the target objects are labelled.
-
-
 
 
 \newpage
