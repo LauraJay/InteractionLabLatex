@@ -76,8 +76,12 @@ To determine the head-mounted displays position within the room, the lighthouse 
 	Within \textit{Unity}, \textit{Steam} provides a plug-in, which can be embedded into the \textit{Unity} scenes. The developer could integrate the VR options easily per drag-and-drop into a existing \textit{Unity} scene. 
 	The provided \textit{Unity} prefab includes all necessary elements to communicate with the hardware. A determination of position and a camera rig for the stereoscopic display is provided as well as the possibility for hand controller input and further use of this data.
 	
-	\subsubsection{Virtual Reality Toolkit (VRTK)}
-	\todo[inline, color=red]{Anna}
-	\textcolor{red}{@Anna: Hier kurz ein bisschen erklären was die VRTK ist und wofür du sie benutzt hast.}
-	
+	\subsubsection{Virtual Reality Toolkit (VRTK)}\label{sec:VRTK}
+	\todo[inline, color=yellow]{Anna}
+	%\textcolor{red}{@Anna: Hier kurz ein bisschen erklären was die VRTK ist und wofür du sie benutzt hast.}
+The ``VRTK'' (Virtual Reality Toolkit) is a free packet with different scripts and prefabs for interaction in the virtual reality \cite{asset_VRTK} \cite{VRTK}. In this project different parts of this plug-in are used.\\ 
+The \textit{radial menu} script is used for the controller menu, see section \ref{sec:Menu}. This \textit{radial menu} creates menu buttons over the touchpad of the \textit{HTC Vive} controller. By scrolling over the touchpad a button can be selected. The selection will be shown by highlighting the button. If this button should be executed, the touchpad has to be pressed when the button is selected. The number of buttons per menu can be changed within the \textit{Unity} editor and also each button can get a different icon. Through a link to a function of a script this function can be executed if the button is pressed.
+Furthermore the prefab for \textit{controller tips} is used for visualisation of the selfteaching(compare section \ref{sec:selfteaching}, and the tasks, compare section \ref{sec:tasks}. This prefab creates a area next to the controller and a line from this area to the selected button of the controller. This area is parented to the controller and moves according to it. Different settings can be changed within the \textit{Unity} editor or by a script.\\
+Besides that there is a very similar prefab, the \textit{object tips}. This is also a canvas, in which information can be displayed, but this can be fixed on any object you like. This prefab is used for the labelling of the target object as well as the visualisation of additional informations in the supermarket, see section \ref{sec:tasks}.
+
 	\newpage
